@@ -1,16 +1,34 @@
 .card-book-container{
-    width: 14%;
+    width: 20%;
     border: 2px solid rgb(87, 14, 14);
     box-shadow: 2px 2px 5px rgb(226, 175, 226);
 }
 
 .card-book-image{
     width: 100%;
-    height: 100px;
+    height: 200px;
+}
+
+.card-book-image > img {
+    width: 100%;
+    height: 100%;
 }
 
 .card-details {
-    margin: 1rem
+    margin: 1rem;
+    line-height: 20px;
+
+}
+
+.card-book-title {
+    height: 50px;
+}
+
+.card-book-desc {
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .card-button{

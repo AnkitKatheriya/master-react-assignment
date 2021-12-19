@@ -1,28 +1,41 @@
-import React, {useEffect} from 'react'
-import { useDispatch } from 'react-redux'
+import {useEffect} from 'react'
+import { useAppSelector, useAppDispatch } from '../../redux/hooks'
 
 import { BookCard } from '../../component'
 import * as thunks from '../../redux/thunks'
 import './Home.css'
 
+interface IBook{
+    author_name: string,
+    description: string,
+    id: number,
+    image: string,
+    isbn13: string,
+    page_count: number,
+    price: string,
+    title: string,
+}
+
 export default function Home() {
-    const dispatch = useDispatch()
+    const dispatch = useAppDispatch()
+
+    const { error, data: books } = useAppSelector((state) => state.booklist)
 
     useEffect(() => {
-        dispatch(thunks.bookListThunk())
+        dispatch<any>(thunks.bookListThunk())
     }, [])
+
+    if(error){
+        return <div>Error</div>
+    }
 
     return (
         <section className='books-container'>
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
-            <BookCard />
+            {
+                books.length > 0 && books.map((book: IBook) =>{
+                    return <BookCard {...book} />
+                } )
+            }
         </section>
     )
 }

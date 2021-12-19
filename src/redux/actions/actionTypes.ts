@@ -20,12 +20,12 @@ const loadBooklist = () => ({
 })
 
 const loadBooklistSuccess = (data: Array<IBook>) => ({
-    type: actionTypes.FETCH_BOOK_LIST,
+    type: actionTypes.FETCH_BOOK_LIST_SUCESS,
     data: data
 })
 
 const loadBooklistFail = (error: Error) => ({
-    type: actionTypes.FETCH_BOOK_LIST,
+    type: actionTypes.FETCH_BOOK_LIST_ERROR,
     error: error,
 })
 

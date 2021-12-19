@@ -19,7 +19,7 @@ const routes = [
     {
         key: 'overview',
         render: () => <BookDetails />,
-        path: '/overview'
+        path: '/boooklist/:id'
     }
 ]
 

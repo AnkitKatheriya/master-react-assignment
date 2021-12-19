@@ -3,17 +3,26 @@ import { Link } from 'react-router-dom'
 
 import './BookCard.css'
 
-export default function BookCard() {
+interface IOwnProps {
+    id: number,
+    image: string,
+    title: string,
+    description: string,
+}
+
+const BookCard: React.FC<IOwnProps> = ({ id, image, title, description }) => {
     return (
-        <article className='card-book-container'>
+        <article key={id} className='card-book-container'>
             <div className='card-book-image'>
-                <img src="" alt="book image" />
+                <img src={image} alt="book image" />
             </div>
             <div className='card-details'>
-                <h4 className='card-book-title'>Book Title</h4>
-                <p className='card-book-desc'>Bood description</p>
-                <button className='card-button'><Link to="/overview">Buy Button</Link></button>
+                <h4 className='card-book-title'>{title}</h4>
+                <p className='card-book-desc'>{description}</p>
+                <button className='card-button'><Link to={`/boooklist/${id}`}>Buy Button</Link></button>
             </div>
         </article>
     )
 }
+
+export default BookCard
