@@ -1,0 +1,7 @@
+.application-wrapper{
+    background-color: var(--body-background);
+    width: 90vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 1rem;
+}

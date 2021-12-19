@@ -1,0 +1,12 @@
+.book-details-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    line-height: 1.5rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.book-image {
+    width: 20%
+}

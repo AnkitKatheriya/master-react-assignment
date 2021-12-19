@@ -1,0 +1,10 @@
+Apis required to create for this database:
+
+GET /booklist
+GET /booklist/:id
+
+/user/addresses
+/user/orderlist
+
+//Api using for the database
+https://api.itbook.store/

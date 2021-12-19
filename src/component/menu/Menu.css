@@ -1,0 +1,29 @@
+.menu {
+    min-width: 200px;
+    font-size: 12px;
+}
+
+.menu-item-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-item{
+    list-style: none;
+    width: 30%
+}
+
+.menu-item > a {
+    text-decoration: none;
+}
+
+.menu-item::after {
+    content: '|';
+    float: right;
+}
+
+.menu-item:last-child::after {
+    content: '';
+}
