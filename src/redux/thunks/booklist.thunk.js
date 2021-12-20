@@ -1,3 +1,4 @@
+import { clientWrapper } from '../../helper'
 import {
     loadBooklist,
     loadBooklistSuccess,
@@ -7,10 +8,8 @@ import {
 const bookListThunk = () => async (dispatch) => {
     dispatch(loadBooklist())
     try {
-        const response = await fetch('http://localhost:3001/booklist')
-        const data = await response.json()
-        console.log("@@@ Response is:", data)
-        await dispatch(loadBooklistSuccess(data))
+        const response = await  clientWrapper.get('http://localhost:3001/booklist')
+        await dispatch(loadBooklistSuccess(response))
     }catch(error) {
         await dispatch(loadBooklistFail(error.message))
     }
